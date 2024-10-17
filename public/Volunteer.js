@@ -12,7 +12,19 @@ function menu() {
 
 
 // JavaScript Code
+
 let selectedMajor = null; // Initialize a global variable to store the selected major
+let data; // Declare data variable at the top
+
+
+function showLoading() {
+    const loadingElement = document.getElementById('loading'); // Ensure this ID matches your HTML
+    if (loadingElement) {
+        loadingElement.style.display = 'block'; // Show loading
+    } else {
+        console.error('Loading element not found in the DOM');
+    }
+}
 
 function showCheckboxes() {
   var checkboxes = document.getElementById("checkboxes");
@@ -53,9 +65,9 @@ function fetchDataCard() {
 
   showLoading();
   // Retrieve data from Airtable
-  fetch('https://api.airtable.com/v0/appVuPVt4NexTjNPj/Volunteer Opportunity', {
+  fetch('https://api.airtable.com/v0/appVuPVt4NexTjNPj/Volunteer%20Opportunity', {
     headers: {
-      'Authorization': 'Bearer keyhRdrFmvbRGMKRk',
+      'Authorization': 'Bearer pat1beA1awXRoj9ix.78d0970b001ae177ea58f465d6b976b1508818cffa64bde089e284d62c4f939b',
       'Content-Type': 'application/json'
     }
   })
@@ -329,7 +341,7 @@ function fetchUserRecordByFirebaseId(firebaseUserId) {
   return fetch(`https://api.airtable.com/v0/appVuPVt4NexTjNPj/User?filterByFormula={ID}="${firebaseUserId}"`, {
     method: 'GET',
     headers: {
-      'Authorization': 'Bearer keyhRdrFmvbRGMKRk',
+      'Authorization': 'Bearer Bearer pat1beA1awXRoj9ix.78d0970b001ae177ea58f465d6b976b1508818cffa64bde089e284d62c4f939b',
     },
   })
     .then(response => response.json())
@@ -347,7 +359,7 @@ function updateVolunteerOpportunityRecord(recordId, updatedFields) {
   fetch(`https://api.airtable.com/v0/appVuPVt4NexTjNPj/Volunteer%20Opportunity/${recordId}`, {
     method: 'PATCH',
     headers: {
-      'Authorization': 'Bearer keyhRdrFmvbRGMKRk',
+      'Authorization': 'Bearer Bearer pat1beA1awXRoj9ix.78d0970b001ae177ea58f465d6b976b1508818cffa64bde089e284d62c4f939b',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ fields: updatedFields }),

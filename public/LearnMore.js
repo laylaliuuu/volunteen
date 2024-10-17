@@ -13,7 +13,7 @@ function fetchRecordById(recordId) {
     // Fetch the specific record from Airtable based on the ID
     return fetch(`https://api.airtable.com/v0/appVuPVt4NexTjNPj/Volunteer Opportunity/${recordId}`, {
       headers: {
-        'Authorization': 'Bearer keyhRdrFmvbRGMKRk',
+        'Authorization': 'Bearer pat1beA1awXRoj9ix.78d0970b001ae177ea58f465d6b976b1508818cffa64bde089e284d62c4f939b',
         'Content-Type': 'application/json'
       }
     })
@@ -430,7 +430,7 @@ function displayRecordData(record) {
       return fetch(`https://api.airtable.com/v0/appVuPVt4NexTjNPj/User?filterByFormula={ID}="${firebaseUserId}"`, {
         method: 'GET',
         headers: {
-          'Authorization': 'Bearer keyhRdrFmvbRGMKRk',
+          'Authorization': 'Bearer pat1beA1awXRoj9ix.78d0970b001ae177ea58f465d6b976b1508818cffa64bde089e284d62c4f939b',
         },
       })
         .then(response => response.json())
@@ -449,7 +449,7 @@ function displayRecordData(record) {
       fetch(`https://api.airtable.com/v0/appVuPVt4NexTjNPj/Volunteer%20Opportunity/${recordId}`, {
         method: 'PATCH',
         headers: {
-          'Authorization': 'Bearer keyhRdrFmvbRGMKRk',
+          'Authorization': 'Bearer pat1beA1awXRoj9ix.78d0970b001ae177ea58f465d6b976b1508818cffa64bde089e284d62c4f939b',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ fields: updatedFields }),
